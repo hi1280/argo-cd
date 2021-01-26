@@ -10,7 +10,7 @@ steps:
 - name: publish
   image: plugins/docker
   settings:
-    repo: alinbalutoiu/argocd
+    repo: hi1280/argocd
     tags: linux-amd64-${DRONE_BRANCH}
     username:
       from_secret: docker_username
@@ -30,7 +30,7 @@ steps:
 - name: publish
   image: plugins/docker
   settings:
-    repo: alinbalutoiu/argocd
+    repo: hi1280/argocd
     tags: linux-arm64-${DRONE_BRANCH}
     build_args:
       - BUILD_ALL_CLIS="false"
@@ -52,7 +52,7 @@ steps:
 - name: publish
   image: plugins/docker
   settings:
-    repo: alinbalutoiu/argocd
+    repo: hi1280/argocd
     tags: linux-arm-${DRONE_BRANCH}
     build_args:
       - BUILD_ALL_CLIS="false"
@@ -74,8 +74,8 @@ steps:
       from_secret: docker_username
     password:
       from_secret: docker_password
-    target: alinbalutoiu/argocd:${DRONE_BRANCH}
-    template: alinbalutoiu/argocd:OS-ARCH-${DRONE_BRANCH}
+    target: hi1280/argocd:${DRONE_BRANCH}
+    template: hi1280/argocd:OS-ARCH-${DRONE_BRANCH}
     platforms:
       - linux/amd64
       - linux/arm
